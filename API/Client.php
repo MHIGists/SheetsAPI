@@ -1,7 +1,7 @@
 <?php
 
 
-class client
+class Client
 {
     private $client;
     private $service;
@@ -11,13 +11,12 @@ class client
 
     public function __construct(string $spreadsheetID = "1tS6Oi927Uas5uWhFsj809C-ibtCHuB13szS0tDM8OYg")
     {
-
-        require __DIR__ . "/vendor/autoload.php";
+        include_once "../load.php";
         $this->client = new Google_Client();
         $this->client->setApplicationName("SheetsAPI project");
         $this->client->setScopes([Google_Service_Sheets::SPREADSHEETS]);
         $this->client->setAccessType("offline");
-        $this->client->setAuthConfig(__DIR__ . '/credentials.json');
+        $this->client->setAuthConfig(CREDENTIALS);
         $this->service = new  Google_Service_Sheets($this->client);
         $this->spreadsheetID = $spreadsheetID;
     }
@@ -32,7 +31,7 @@ class client
         return $this->service;
     }
 
-    public static function getInstance(): client
+    public static function getInstance(): Client
     {
         if (!isset(self::$instance) || empty(self::$instance)) {
             self::$instance = new self();

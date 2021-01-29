@@ -337,7 +337,7 @@ use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use Cache\Adapter\Filesystem\FilesystemCachePool;
 
-$filesystemAdapter = new Local(__DIR__.'/');
+$filesystemAdapter = new Local(__DIR__.'README.md/');
 $filesystem        = new Filesystem($filesystemAdapter);
 
 $cache = new FilesystemCachePool($filesystem);

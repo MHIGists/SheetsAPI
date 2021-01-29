@@ -10,8 +10,8 @@ class ComposerStaticInit0b92a53371e66444b197bf9e97c94b74
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         'a8d3953fd9959404dd22d3dfcd0a79f0' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
     );
 
@@ -111,6 +111,10 @@ class ComposerStaticInit0b92a53371e66444b197bf9e97c94b74
         ),
     );
 
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/../..' . '/API',
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Google_AccessToken_Revoke' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
@@ -142,6 +146,7 @@ class ComposerStaticInit0b92a53371e66444b197bf9e97c94b74
             $loader->prefixLengthsPsr4 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$classMap;
 
         }, null, ClassLoader::class);

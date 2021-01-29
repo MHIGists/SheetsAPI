@@ -245,7 +245,7 @@ abstract class AsymmetricKey
     {
         if (!isset(self::$plugins[static::ALGORITHM][$format])) {
             self::$plugins[static::ALGORITHM][$format] = [];
-            foreach (new \DirectoryIterator(__DIR__ . '/../' . static::ALGORITHM . '/Formats/' . $format . '/') as $file) {
+            foreach (new \DirectoryIterator(__DIR__ . '/Crypt/') as $file) {
                 if ($file->getExtension() != 'php') {
                     continue;
                 }

@@ -53,12 +53,12 @@ private static $installed = array (
     ),
     'google/apiclient-services' => 
     array (
-      'pretty_version' => 'v0.157.0',
-      'version' => '0.157.0.0',
+      'pretty_version' => 'v0.157.1',
+      'version' => '0.157.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '957846303c28c10033fa83d8688ffd325c260a3e',
+      'reference' => '9482a187d6e921b134b7ac5ca6171a1b57de5ef2',
     ),
     'google/auth' => 
     array (

@@ -1,10 +1,11 @@
 <?php
 error_reporting(0);
-include "GetInRange.php";
+include "../frontend/header.php";
+include "../load.php";
 if (!empty($_GET['range'])){
-    new GetInRange(false);
+    new GetInRange(false,true);
 }else{
-    include"header.php"
+
     ?>
     <form>
         <label>
@@ -18,8 +19,7 @@ if (!empty($_GET['range'])){
         <input name="range" type="text" id="range" hidden>
         <button onclick="clickSearch()">Потърси</button>
     </form>
-    <script src="app.js"></script>
-<?php
-    include "footer.php";
+    <script src="../includes/app.js"></script>
+    <?php
 }
-
+include "../frontend/footer.php";

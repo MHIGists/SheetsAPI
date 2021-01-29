@@ -1,10 +1,10 @@
 <?php
+include_once "frontend/header.php";
+include_once "load.php";
 
-include_once "header.php";
 ?>
-<a href="get_whole.php">Принтирай цялата таблица</a<br>
-<a href="in_range.php">Извади в област</a><br>
-<a href="edit_all.php">Промени стоийност/и от цялата таблица</a><br>
-<a href="edit_in_range.php">Промени стойност/и в определена област</a><br>
+<a href="backend/get_whole.php">Принтирай цялата таблица</a><br>
+<a href="backend/in_range.php">Извади в област</a><br>
+<a href="backend/edit_in_range.php">Промени стойност/и в определена област</a><br>
 <?php
-include_once "footer.php";
+include_once "frontend/footer.php";
