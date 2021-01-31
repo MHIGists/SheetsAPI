@@ -1,12 +1,12 @@
 <?php
 error_reporting(0);
+include "../frontend/header_1.php";
 include "../load.php";
 Utils::startSession();
 if (!empty($_GET['range'])){
-    new GetInRange(false, false, $_GET['ID']);
+    new GetInRange(false, false, $_SESSION['sheet_id']);
 }else{
-    include "../frontend/header_1.php";
-    new GetInRange(true, false, $_GET['ID']);
+    new GetInRange(true, false, $_SESSION['sheet_id']);
     ?>
     <form>
         <label>
@@ -18,12 +18,10 @@ if (!empty($_GET['range'])){
             <input type="text" id="range2">
         </label>
         <input name="range" type="text" id="range" hidden>
-        <input name="sheet" type="text" value="<?php echo $_GET['sheet']?>" hidden>
-        <input name="ID" type="text" value="<?php echo $_GET['ID']?>" hidden>
+        <input name="sheet" type="text" value="<?php echo $_SESSION['sheet_name']?>" hidden>
+        <input name="ID" type="text" value="<?php echo $_SESSION['sheet_id']?>" hidden>
         <button onclick="clickSearch()">Потърси</button>
     </form>
-    <script src="../includes/app.js"></script>
 <?php
-    include "../frontend/footer_1.php";
 }
-
+include "../frontend/footer_1.php";

@@ -4,14 +4,14 @@ class GetInRange
 {
     public function __construct(bool $whole, bool $updateData = false, string $spreadsheetID = '')
     {
-        $sheetName = 'Sheet1!';
+        $sheetName = $_SESSION['sheet_name'];
         if (!empty($_GET['range'])){
-            $range = $_GET['range'];
+            $range = $sheetName .'!'.$_GET['range'];
         }
         if ($whole){
-            $range = $_GET['sheet'] . "!a1:z10000";
+            $range = $_SESSION['sheet_name'] . "!a1:z10000";
         }
-        $id = !empty($_GET['ID']) ? $_GET['ID']: Client::getSpreadsheetID();
+        $id = !empty($_SESSION['sheet_id']) ? $_SESSION['sheet_id']: Client::getSpreadsheetID();
         $service = Client::getService($id, $sheetName);
         $response = $service->spreadsheets_values->get($id, $range);
         $values = $response->getValues();

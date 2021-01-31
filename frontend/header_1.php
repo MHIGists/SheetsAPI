@@ -6,3 +6,4 @@
     <link rel="stylesheet" href="../includes/app.css">
 </head>
 <body>
+<button onclick="location.href = location.protocol + '//' + location.host + '/index.php?logout=true';">Logout</button>

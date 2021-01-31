@@ -37,7 +37,6 @@ class PDOConnect
             $sql = 'INSERT INTO users (id, username, password, sheet_id, sheet_name) VALUES (NULL, :username, :password, NULL, NULL)';
             $sth = self::$connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
             $sth->execute([':username' => $username, ':password' => $password]);
-            print_r($sth->fetchAll());
             return true;
         }
         return false;
@@ -45,13 +44,17 @@ class PDOConnect
     public static function addSpreadSheetID(string $id, string $user_id, $string){
         self::init($string);
         $sql = 'UPDATE users SET sheet_id = :sheetID WHERE users . id = :id';
-        $sth = self::$connection->prepare($sql, ['sheetID' => $id, ':id' => $user_id]);
-        $sth->execute();
+        $sth = self::$connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $sth->execute(['sheetID' => $id, ':id' => $user_id]);
     }
     public static function addSheetName(string $sheetName, string $user_id, $string){
         self::init($string);
         $sql = 'UPDATE users SET sheet_name = :sheetName WHERE users . id = :id';
-        $sth = self::$connection->prepare($sql, ['sheetID' => $sheetName, ':id' => $user_id]);
-        $sth->execute();
+        $sth = self::$connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $sth->execute([':sheetName' => $sheetName, ':id' => $user_id]);
+    }
+    public static function addSheetNameAndID(array $get, string $user_id, $string){
+        self::addSheetName($get['sheet'], $user_id, $string);
+        self::addSpreadSheetID($get['spreadsheetID'], $user_id, $string);
     }
 }

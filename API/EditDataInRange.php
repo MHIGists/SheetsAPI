@@ -21,9 +21,9 @@ class EditDataInRange
                 $index++;
             }
         }
-        $id = Client::getSpreadsheetID($_GET['ID'], $_GET['sheet']);
+        $id = Client::getSpreadsheetID($_SESSION['sheet_id'], $_SESSION['sheet_name']);
         $update = new BatchUpdate();
         $update->batchUpdateValues($id, $range, "RAW", $values);
-        new GetInRange(false, false, $_GET['ID']);
+        new GetInRange(false, false, $_SESSION['sheet_id']);
     }
 }

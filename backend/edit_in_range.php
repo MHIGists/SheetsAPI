@@ -4,9 +4,9 @@ include "../frontend/header_1.php";
 include "../load.php";
 Utils::startSession();
 if (!empty($_GET['range'])){
-    new GetInRange(false,true);
+    new GetInRange(false,true, $_SESSION['sheet_id']);
 }else{
-    new GetInRange(true, false, $_GET['ID']);
+    new GetInRange(true, false, $_SESSION['sheet_id']);
     ?>
     <form>
         <label>
@@ -18,9 +18,9 @@ if (!empty($_GET['range'])){
             <input type="text" id="range2">
         </label>
         <input name="range" type="text" id="range" hidden>
-        <input name="sheet" type="text" value="<?php echo $_GET['sheet']?>" hidden>
-        <input name="ID" type="text" value="<?php echo $_GET['ID']?>" hidden>
-        <button onclick="clickSearch()">Потърси</button>
+        <input name="sheet" type="text" value="<?php echo $_SESSION['sheet_name']?>" hidden>
+        <input name="ID" type="text" value="<?php echo $_SESSION['sheet_id']?>" hidden>
+        <button onclick="clickSearch()">Промени</button>
     </form>
     <?php
 }
