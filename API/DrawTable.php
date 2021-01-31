@@ -5,7 +5,6 @@ class DrawTable
 {
     public function __construct(array $values)
     {
-        $last = max(count($values[0]), count($values));
         $alphabet = range('A', 'Z');
         echo "<table><tr>";
         echo "<th>" . " " . "</th>";
@@ -13,10 +12,10 @@ class DrawTable
             echo "<th>" . $alphabet[$key] . "</th>";
         }
         echo "</tr>";
-        for ($i = 0; $i < $last; $i++) {
+        foreach ($values as $i => $iValue) {
             echo "<tr>";
             echo "<td><b>" . ($i+1) . "</b></td>";
-            foreach ($values[$i] as $value) {
+            foreach ($iValue as $value) {
                     echo "<td id='$value'>" . $value . "</td>";
             }
             echo "</tr>";

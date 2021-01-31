@@ -2,9 +2,11 @@
 error_reporting(0);
 include "../frontend/header_1.php";
 include "../load.php";
+Utils::startSession();
 if (!empty($_GET['range'])){
     new GetInRange(false,true);
 }else{
+    new GetInRange(true, false, $_GET['ID']);
     ?>
     <form>
         <label>

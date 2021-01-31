@@ -1,6 +1,7 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 include "../load.php";
+Utils::startSession();
 if (!empty($_GET['range'])){
     new GetInRange(false, false, $_GET['ID']);
 }else{
