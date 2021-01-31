@@ -7,5 +7,6 @@
         Password:
         <input type="password" name="pass">
     </label>
-    <button type="submit">Създай акаунт</button>
+	<br>
+    <button type="submit">Създаване на акаунт</button>
 </form>
