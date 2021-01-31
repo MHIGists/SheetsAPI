@@ -24,6 +24,6 @@ if (!empty($_GET['range'])){
     </form>
     <script src="../includes/app.js"></script>
 <?php
-    include "../frontend/footer_2.php";
+    include "../frontend/footer_1.php";
 }
 

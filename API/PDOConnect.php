@@ -33,9 +33,14 @@ class PDOConnect
     }
     public static function createUser($username, $password, $string){
         self::init($string);
-        $sql = 'INSERT INTO users (id, username, password, sheet_id, sheet_name) VALUES (NULL, :username, :password, NULL, NULL)';
-        $sth = self::$connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
-        $sth->execute([':username' => $username, ':password' => $password]);
+        if (self::userExists($username, $password,$string) == false){
+            $sql = 'INSERT INTO users (id, username, password, sheet_id, sheet_name) VALUES (NULL, :username, :password, NULL, NULL)';
+            $sth = self::$connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+            $sth->execute([':username' => $username, ':password' => $password]);
+            print_r($sth->fetchAll());
+            return true;
+        }
+        return false;
     }
     public static function addSpreadSheetID(string $id, string $user_id, $string){
         self::init($string);

@@ -16,7 +16,7 @@ if (Utils::isLoggedIn()) {
         <a href="backend/edit_in_range.php">Промени стойност/и в определена област</a><br>
     <?php
     }else{
-        include_once "frontend/logged_in_index.php";
+        include_once "frontend/enter_id_name.php";
     }
 } else {
     include_once "frontend/log_in_index.php";

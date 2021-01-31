@@ -24,4 +24,4 @@ if (!empty($_GET['range'])){
     </form>
     <?php
 }
-include "../frontend/footer_2.php";
+include "../frontend/footer_1.php";

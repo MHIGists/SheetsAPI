@@ -1,4 +1,4 @@
-<form method="post" action="register.php">
+<form method="post">
     <label>
         Username:
         <input type="text" name="username">
