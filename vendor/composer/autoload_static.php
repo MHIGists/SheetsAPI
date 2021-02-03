@@ -20,6 +20,11 @@ class ComposerStaticInit0b92a53371e66444b197bf9e97c94b74
         array (
             'phpseclib3\\' => 11,
         ),
+        'S' => 
+        array (
+            'Sheets\\API\\' => 11,
+            'Sheets\\' => 7,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -50,6 +55,14 @@ class ComposerStaticInit0b92a53371e66444b197bf9e97c94b74
         'phpseclib3\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
+        'Sheets\\API\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/API',
+        ),
+        'Sheets\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
         ),
         'Psr\\Log\\' => 
         array (
@@ -111,10 +124,6 @@ class ComposerStaticInit0b92a53371e66444b197bf9e97c94b74
         ),
     );
 
-    public static $fallbackDirsPsr0 = array (
-        0 => __DIR__ . '/../..' . '/API',
-    );
-
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Google_AccessToken_Revoke' => __DIR__ . '/..' . '/google/apiclient/src/aliases.php',
@@ -146,7 +155,6 @@ class ComposerStaticInit0b92a53371e66444b197bf9e97c94b74
             $loader->prefixLengthsPsr4 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$prefixesPsr0;
-            $loader->fallbackDirsPsr0 = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInit0b92a53371e66444b197bf9e97c94b74::$classMap;
 
         }, null, ClassLoader::class);

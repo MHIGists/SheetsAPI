@@ -1,7 +1,12 @@
 <?php
 
+namespace Sheets\API;
+use Google_Client;
+use Google_Service_Sheets;
 
- class Client
+use Sheets\Utils;
+
+class Client
 {
     private static $client;
     private static $service;
@@ -10,6 +15,7 @@
     private static $instance = null;
     private const ID = "1tS6Oi927Uas5uWhFsj809C-ibtCHuB13szS0tDM8OYg";
     private const SHEET_NAME = 'Sheet1!';
+
     private function __construct(){}
 
     public static function init(string $spreadsheetID = self::ID, string $sheetName = self::SHEET_NAME){
@@ -21,7 +27,7 @@
             self::$client->setApplicationName("SheetsAPI project");
             self::$client->setScopes([Google_Service_Sheets::SPREADSHEETS]);
             self::$client->setAccessType("offline");
-            self::$client->setAuthConfig(CREDENTIALS);
+            self::$client->setAuthConfig(Utils::$CREDENTIALS);
             self::$service = new  Google_Service_Sheets(self::$client);
             self::$spreadsheetID = $spreadsheetID;
             self::$sheetName = $sheetName;

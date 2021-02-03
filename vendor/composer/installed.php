@@ -40,12 +40,12 @@
     ),
     'google/apiclient-services' => 
     array (
-      'pretty_version' => 'v0.157.1',
-      'version' => '0.157.1.0',
+      'pretty_version' => 'v0.158.0',
+      'version' => '0.158.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9482a187d6e921b134b7ac5ca6171a1b57de5ef2',
+      'reference' => '859f9c95ed85df02370f355b69c0dcad99367728',
     ),
     'google/auth' => 
     array (

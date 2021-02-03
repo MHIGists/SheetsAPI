@@ -1,6 +1,8 @@
 <?php
 
-
+namespace Sheets\API;
+use Google_Service_Sheets;
+use Google_Service_Sheets_Spreadsheet;
 class CreateSheet
 {
     private $service;

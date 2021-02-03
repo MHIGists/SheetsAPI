@@ -1,5 +1,5 @@
 <?php
-
+namespace Sheets\API;
 class EditDataInRange
 {
 

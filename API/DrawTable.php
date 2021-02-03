@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Sheets\API;
 class DrawTable
 {
     public function __construct(array $values)

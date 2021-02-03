@@ -1,5 +1,9 @@
 <?php
 
+namespace Sheets\API;
+
+use Google_Service_Sheets_BatchUpdateValuesRequest;
+use Google_Service_Sheets_ValueRange;
 
 class BatchUpdate
 {

@@ -3,5 +3,11 @@
         "google/apiclient": "^2.0",
       "ext-json": "*",
       "ext-pdo": "*"
+    },
+  "autoload": {
+    "psr-4": {
+      "Sheets\\API\\" : "API/",
+      "Sheets\\" : ""
     }
+  }
 }

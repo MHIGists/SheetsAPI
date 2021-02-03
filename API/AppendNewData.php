@@ -1,6 +1,6 @@
 <?php
 
-
+namespace Sheets\API;
 class AppendNewData
 {
     private $service;

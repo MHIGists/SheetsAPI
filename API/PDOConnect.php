@@ -1,6 +1,8 @@
 <?php
 
-
+namespace Sheets\API;
+use PDO;
+use PDOException;
 class PDOConnect
 {
     /**

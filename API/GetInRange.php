@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+namespace Sheets\API;
 class GetInRange
 {
     public function __construct(bool $whole, bool $updateData = false, string $spreadsheetID = '')
