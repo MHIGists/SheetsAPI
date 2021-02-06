@@ -4,16 +4,18 @@
 namespace Sheets\API;
 
 
+use Sheets\Utils;
+
 class Routes
 {
     private static $routes = [
-        '404' => __DIR__ . '\\404.php'
+        '404' => ''
     ];
     public static function getRoute(string $request, array $params = []){
         if (self::routeExists($request)){
             return self::$routes[$request];
         }
-        return self::$routes['404'];
+        return self::$routes['404'] = Utils::$NOTFOUND;
     }
     public static function addRoute(string $request, string $route){
         self::$routes[$request] = $route;

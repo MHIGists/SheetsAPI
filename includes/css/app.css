@@ -1,11 +1,17 @@
 body {
     background-color: #c8d7dd;
     font-size: 20px;
+    color: white;
 }
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    background-color: #fff;
+#container-top-bar{
+    margin-top: 20px;
+    background: #563d7c;
 }
-
+#top-bar{
+    background: #563d7c;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#logout{
+    margin: 5px;
+}

@@ -3,8 +3,6 @@
 use Sheets\API\PDOConnect;
 use Sheets\Utils;
 
-include_once "parts/header.php";
-Utils::startSession();
 if (!empty($_GET['logout'])){
     echo 'Logging out!';
     Utils::setLoggedIn(false, true);
@@ -33,4 +31,3 @@ if (!Utils::isLoggedIn() && Utils::checkPostData($_POST)) {
         header("Refresh:0");
     }
 }
-include_once "parts/footer.php";

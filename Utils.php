@@ -8,6 +8,7 @@ class Utils
 {
     public static $SETTINGS = __DIR__ . '/settings.json';
     public static $CREDENTIALS = __DIR__ . '/credentials.json';
+    public static $NOTFOUND = __DIR__ . '\\pages\\404.php';
 
     public static function checkPostData(array $post)
     {
@@ -77,10 +78,8 @@ class Utils
     public static function getCurrentPage()
     {
         $pageURL = 'http';
-        if (isset($_SERVER['HTTPS'])){
-            if ($_SERVER["HTTPS"] === "on") {
-                $pageURL .= "s";
-            }
+        if (isset($_SERVER['HTTPS']) && $_SERVER["HTTPS"] === "on") {
+            $pageURL .= "s";
         }
         $pageURL .= "://";
         if ($_SERVER["SERVER_PORT"] !== "80") {

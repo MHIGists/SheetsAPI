@@ -3,7 +3,6 @@
 use Sheets\API\Client;
 use Sheets\API\CreateSheet;
 
-include_once 'parts/header.php';
 if (!empty($_GET['title'])){
 
     (new CreateSheet(Client::getService()))->create($_GET['title']);
@@ -18,4 +17,3 @@ if (!empty($_GET['title'])){
 </form>
 <?php
 }
-include_once 'parts/footer.php';

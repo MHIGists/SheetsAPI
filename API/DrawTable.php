@@ -6,7 +6,7 @@ class DrawTable
     public function __construct(array $values)
     {
         $alphabet = range('A', 'Z');
-        echo "<table><tr>";
+        echo "<table class='table'><tr>";
         echo "<th>" . " " . "</th>";
         foreach ($values[0] as $key => $value) {
             echo "<th>" . $alphabet[$key] . "</th>";

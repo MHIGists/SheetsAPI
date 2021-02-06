@@ -1,11 +1,7 @@
 <?php
 
 use Sheets\API\GetInRange;
-use Sheets\Utils;
 
-error_reporting(0);
-include "parts/header.php";
-Utils::startSession();
 if (!empty($_GET['range'])){
     new GetInRange(false,true, $_SESSION['sheet_id']);
 }else{
@@ -27,4 +23,3 @@ if (!empty($_GET['range'])){
     </form>
     <?php
 }
-include "parts/footer.php";
