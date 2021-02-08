@@ -89,7 +89,9 @@ class Utils
         }
         return $pageURL;
     }
-    public static function getRequestedRoute(){
+
+    public static function getRequestedRoute()
+    {
         return parse_url(self::getCurrentPage(), PHP_URL_PATH);
-}
+    }
 }

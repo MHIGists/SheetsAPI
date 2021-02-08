@@ -9,10 +9,15 @@ class PDOConnect
      * @var PDO
      */
     protected static $connection;
+    /**
+     * @var string
+     */
+    private static $string;
     public function __construct(){}
     public static function init($string){
         if (is_null(self::$connection)){
-            $settings = json_decode(file_get_contents($string), true);
+            self::$string = $string;
+            $settings = json_decode(file_get_contents(self::$string), true);
             $dsn = "mysql:dbname={$settings['dbname']};host=" . $settings['host'];
             try {
                 self::$connection = new PDO($dsn,$settings['user'], $settings['password']);
@@ -58,5 +63,16 @@ class PDOConnect
     public static function addSheetNameAndID(array $get, string $user_id, $string){
         self::addSheetName($get['sheet'], $user_id, $string);
         self::addSpreadSheetID($get['spreadsheetID'], $user_id, $string);
+    }
+    public static function changeUserData(string $username, string $password, string $sheet_id, string $sheet_name, $string){
+        self::init($string);
+        $sql = 'UPDATE users SET username = :username, password = :password, sheet_id = :sheetID, sheet_name = :sheetName WHERE users.id = 2 ';
+        $sth = self::$connection->prepare($sql, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $sth->execute([':username' => $username, ':password' => $password, ':sheetID' => $sheet_id, ':sheetName' => $sheet_name]);
+    }
+    public static function getUserPassword($string){
+        self::init($string);
+        $sql = 'SELECT `password` FROM `users` WHERE id = ' . $_SESSION['user_id'];
+        return (self::$connection->query($sql))->fetchAll();
     }
 }

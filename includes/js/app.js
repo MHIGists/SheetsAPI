@@ -1,6 +1,9 @@
 function clickSearch() {
     document.getElementById('range').value = document.getElementById('range1').value + ":" + document.getElementById('range2').value;
 }
+function logout(){
+    location.href = location.protocol + '//' + location.host + '/index.php?logout=true';
+}
 function createQuery() {
     console.log("Creating query");
     let values = document.getElementById('values');

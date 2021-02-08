@@ -1,6 +1,10 @@
 <?php
 
 namespace Sheets\API;
+
+use Google_Service_Sheets;
+use Google_Service_Sheets_ValueRange;
+
 class AppendNewData
 {
     private $service;

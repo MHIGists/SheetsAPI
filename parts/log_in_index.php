@@ -12,4 +12,4 @@
     </div>
 
 </form>
-<a href="backend/register.php">Register</a>
+<a href="register.php" class="link-secondary">Register</a>

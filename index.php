@@ -24,6 +24,7 @@ foreach ($request as $key => $item) {
     }
     $params[] = $item;
 }
+
 include_once 'parts/header.php';
 include_once Routes::getRoute($requested_page, $params);
 include_once 'parts/footer.php';

@@ -4,7 +4,6 @@ use Sheets\API\PDOConnect;
 use Sheets\Utils;
 
 if (!empty($_GET['logout'])){
-    echo 'Logging out!';
     Utils::setLoggedIn(false, true);
     $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     $url = strtok($url, '?');
